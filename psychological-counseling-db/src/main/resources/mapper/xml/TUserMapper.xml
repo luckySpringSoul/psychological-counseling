@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rys.db.mapper.TUserMapper">
+
+    <select id="selectPageVo" parameterType="com.rys.request.admin.UserListQueryRequest" resultType="com.rys.response.user.user.UserListResponse">
+        select a.code as code,
+               a.user_name as userName,
+               a.user_tel as userTel,
+               a.gender as gender,
+               a.nick_name as nickName,
+               a.Level as Level,
+               b.order_no as orderNo,
+               b.integral as  integral,
+               a.create_time as createTime
+    from t_user a
+        left join t_user_account b on a.code=b.user_id
+    <where>
+        <if test="request.userTel!=null and request.userTel!=''">
+            and a.user_tel like concat(#{request.userTel},'%')
+        </if>
+        <if test="request.nickName!=null and request.nickName!=''">
+            and a.nick_name like concat(#{request.nickName},'%')
+        </if>
+        <if test="request.startTime!=null and request.startTime!=''">
+            and a.create_time &gt;= #{request.startTime}
+        </if>
+        <if test="request.endTime!=null and request.endTime!=''">
+            and a.create_time &lt;= #{request.endTime}
+        </if>
+    </where>
+    </select>
+
+</mapper>

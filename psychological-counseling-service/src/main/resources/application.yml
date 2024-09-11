@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: distribution-service
+  profiles:
+    active:
+      - config
+      - service
+
+
+server:
+  port: 10000
