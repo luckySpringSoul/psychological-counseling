@@ -1,0 +1,108 @@
+[2024-09-13 10:43:25,028] [INFO] [background-preinit-27] [2767] [o.h.v.i.u.Version.<clinit>:21] HV000001: Hibernate Validator 6.1.7.Final
+[2024-09-13 10:43:25,087] [INFO] [main-1] [2826] [c.r.WebAdminApplication.logStarting:55] Starting WebAdminApplication using Java 1.8.0_271 on yiloutingfengyudeMacBook-Pro.local with PID 33575 (/Users/yiloutingfengyu/IdeaProjects/yiloutingfengyu/Psychological-counseling/web-admin/target/classes started by yiloutingfengyu in /Users/yiloutingfengyu/IdeaProjects/yiloutingfengyu/Psychological-counseling)
+[2024-09-13 10:43:25,091] [INFO] [main-1] [2830] [c.r.WebAdminApplication.logStartupProfileInfo:664] The following profiles are active: config,service
+[2024-09-13 10:43:25,922] [INFO] [main-1] [3661] [o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+[2024-09-13 10:43:25,923] [INFO] [main-1] [3662] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:128] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[2024-09-13 10:43:25,950] [INFO] [main-1] [3689] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:188] Finished Spring Data repository scanning in 23 ms. Found 0 MongoDB repository interfaces.
+[2024-09-13 10:43:25,963] [INFO] [main-1] [3702] [o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+[2024-09-13 10:43:25,964] [INFO] [main-1] [3703] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2024-09-13 10:43:25,984] [INFO] [main-1] [3723] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:188] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+[2024-09-13 10:43:26,366] [INFO] [main-1] [4105] [o.s.c.a.ConfigurationClassPostProcessor.enhanceConfigurationClasses:422] Cannot enhance @Configuration bean definition 'com.github.lianjiatech.retrofit.plus.boot.RetrofitAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2024-09-13 10:43:27,031] [INFO] [main-1] [4770] [o.s.b.w.e.t.TomcatWebServer.initialize:108] Tomcat initialized with port(s): 8092 (http)
+[2024-09-13 10:43:27,043] [INFO] [main-1] [4782] [o.a.c.h.Http11NioProtocol.log:173] Initializing ProtocolHandler ["http-nio-8092"]
+[2024-09-13 10:43:27,044] [INFO] [main-1] [4783] [o.a.c.c.StandardService.log:173] Starting service [Tomcat]
+[2024-09-13 10:43:27,044] [INFO] [main-1] [4783] [o.a.c.c.StandardEngine.log:173] Starting Servlet engine: [Apache Tomcat/9.0.41]
+[2024-09-13 10:43:27,131] [INFO] [main-1] [4870] [o.a.c.c.C.[.[.[/p/admin].log:173] Initializing Spring embedded WebApplicationContext
+[2024-09-13 10:43:27,131] [INFO] [main-1] [4870] [o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:289] Root WebApplicationContext: initialization completed in 1996 ms
+[2024-09-13 10:43:28,294] [INFO] [main-1] [6033] [s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping.initHandlerMethods:69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+[2024-09-13 10:43:28,436] [INFO] [main-1] [6175] [o.s.s.c.ThreadPoolTaskExecutor.initialize:181] Initializing ExecutorService 'applicationTaskExecutor'
+[2024-09-13 10:43:28,930] [INFO] [main-1] [6669] [o.m.d.cluster.info:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+[2024-09-13 10:43:28,988] [INFO] [cluster-ClusterId{value='66e3a6d0c17a464be5456556', description='null'}-localhost:27017-43] [6727] [o.m.d.cluster.info:76] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) [mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) [mongodb-driver-core-4.1.1.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_271]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_271]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476) ~[?:1.8.0_271]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218) ~[?:1.8.0_271]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200) ~[?:1.8.0_271]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394) ~[?:1.8.0_271]
+	at java.net.Socket.connect(Socket.java:606) ~[?:1.8.0_271]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.1.1.jar:?]
+	... 4 more
+[2024-09-13 10:43:29,381] [INFO] [main-1] [7120] [o.a.c.h.Http11NioProtocol.log:173] Starting ProtocolHandler ["http-nio-8092"]
+[2024-09-13 10:43:29,408] [INFO] [main-1] [7147] [o.s.b.w.e.t.TomcatWebServer.start:220] Tomcat started on port(s): 8092 (http) with context path '/p/admin'
+[2024-09-13 10:43:29,409] [INFO] [main-1] [7148] [s.d.s.w.p.DocumentationPluginsBootstrapper.start:93] Documentation plugins bootstrapped
+[2024-09-13 10:43:29,414] [INFO] [main-1] [7153] [s.d.s.w.p.DocumentationPluginsBootstrapper.bootstrapDocumentationPlugins:79] Found 1 custom documentation plugin(s)
+[2024-09-13 10:43:29,457] [INFO] [main-1] [7196] [s.d.s.w.s.ApiListingReferenceScanner.scan:44] Scanning for api listing references
+[2024-09-13 10:43:29,721] [INFO] [main-1] [7460] [s.d.s.w.r.o.CachingOperationNameGenerator.startingWith:41] Generating unique operation named: getReserveListUsingGET_1
+[2024-09-13 10:43:29,725] [INFO] [main-1] [7464] [s.d.s.w.r.o.CachingOperationNameGenerator.startingWith:41] Generating unique operation named: listSessionUsingGET_1
+[2024-09-13 10:43:29,809] [INFO] [main-1] [7548] [c.r.a.n.WebSocketServer.start:23] netty server - 启动成功
+[2024-09-13 10:43:29,816] [INFO] [main-1] [7555] [c.r.WebAdminApplication.logStarted:61] Started WebAdminApplication in 5.227 seconds (JVM running for 7.695)
+[2024-09-13 10:47:01,252] [INFO] [http-nio-8092-exec-2-48] [218991] [o.a.c.c.C.[.[.[/p/admin].log:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-09-13 10:47:01,253] [INFO] [http-nio-8092-exec-2-48] [218992] [o.s.w.s.DispatcherServlet.initServletBean:525] Initializing Servlet 'dispatcherServlet'
+[2024-09-13 10:47:01,255] [INFO] [http-nio-8092-exec-2-48] [218994] [o.s.w.s.DispatcherServlet.initServletBean:547] Completed initialization in 2 ms
+[2024-09-13 10:47:01,427] [INFO] [http-nio-8092-exec-2-48] [219166] [c.r.a.i.AuthInterceptor.preHandle:45] 请求 URL：http://localhost:8092/p/admin//listSession
+[2024-09-13 10:47:09,081] [INFO] [http-nio-8092-exec-2-48] [226820] [c.a.d.p.DruidDataSource.init:983] {dataSource-1} inited
+[2024-09-13 10:55:00,062] [INFO] [SpringContextShutdownHook-29] [697801] [o.s.s.c.ThreadPoolTaskExecutor.shutdown:218] Shutting down ExecutorService 'applicationTaskExecutor'
+[2024-09-13 10:55:00,069] [INFO] [SpringContextShutdownHook-29] [697808] [c.a.d.p.DruidDataSource.close:2024] {dataSource-1} closing ...
+[2024-09-13 10:55:00,080] [INFO] [SpringContextShutdownHook-29] [697819] [c.a.d.p.DruidDataSource.close:2096] {dataSource-1} closed
+[2024-09-13 10:55:05,284] [INFO] [background-preinit-27] [1888] [o.h.v.i.u.Version.<clinit>:21] HV000001: Hibernate Validator 6.1.7.Final
+[2024-09-13 10:55:05,332] [INFO] [main-1] [1936] [c.r.WebAdminApplication.logStarting:55] Starting WebAdminApplication using Java 1.8.0_271 on yiloutingfengyudeMacBook-Pro.local with PID 40694 (/Users/yiloutingfengyu/IdeaProjects/yiloutingfengyu/Psychological-counseling/web-admin/target/classes started by yiloutingfengyu in /Users/yiloutingfengyu/IdeaProjects/yiloutingfengyu/Psychological-counseling)
+[2024-09-13 10:55:05,336] [INFO] [main-1] [1940] [c.r.WebAdminApplication.logStartupProfileInfo:664] The following profiles are active: config,service
+[2024-09-13 10:55:06,053] [INFO] [main-1] [2657] [o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+[2024-09-13 10:55:06,053] [INFO] [main-1] [2657] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:128] Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+[2024-09-13 10:55:06,078] [INFO] [main-1] [2682] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:188] Finished Spring Data repository scanning in 21 ms. Found 0 MongoDB repository interfaces.
+[2024-09-13 10:55:06,087] [INFO] [main-1] [2691] [o.s.d.r.c.RepositoryConfigurationDelegate.multipleStoresDetected:250] Multiple Spring Data modules found, entering strict repository configuration mode!
+[2024-09-13 10:55:06,088] [INFO] [main-1] [2692] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:128] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2024-09-13 10:55:06,105] [INFO] [main-1] [2709] [o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:188] Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+[2024-09-13 10:55:06,450] [INFO] [main-1] [3054] [o.s.c.a.ConfigurationClassPostProcessor.enhanceConfigurationClasses:422] Cannot enhance @Configuration bean definition 'com.github.lianjiatech.retrofit.plus.boot.RetrofitAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+[2024-09-13 10:55:07,067] [INFO] [main-1] [3671] [o.s.b.w.e.t.TomcatWebServer.initialize:108] Tomcat initialized with port(s): 8092 (http)
+[2024-09-13 10:55:07,078] [INFO] [main-1] [3682] [o.a.c.h.Http11NioProtocol.log:173] Initializing ProtocolHandler ["http-nio-8092"]
+[2024-09-13 10:55:07,078] [INFO] [main-1] [3682] [o.a.c.c.StandardService.log:173] Starting service [Tomcat]
+[2024-09-13 10:55:07,079] [INFO] [main-1] [3683] [o.a.c.c.StandardEngine.log:173] Starting Servlet engine: [Apache Tomcat/9.0.41]
+[2024-09-13 10:55:07,164] [INFO] [main-1] [3768] [o.a.c.c.C.[.[.[/p/admin].log:173] Initializing Spring embedded WebApplicationContext
+[2024-09-13 10:55:07,165] [INFO] [main-1] [3769] [o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:289] Root WebApplicationContext: initialization completed in 1792 ms
+[2024-09-13 10:55:08,295] [INFO] [main-1] [4899] [s.d.s.w.WebMvcPropertySourcedRequestMappingHandlerMapping.initHandlerMethods:69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+[2024-09-13 10:55:08,407] [INFO] [main-1] [5011] [o.s.s.c.ThreadPoolTaskExecutor.initialize:181] Initializing ExecutorService 'applicationTaskExecutor'
+[2024-09-13 10:55:08,852] [INFO] [main-1] [5456] [o.m.d.cluster.info:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+[2024-09-13 10:55:08,910] [INFO] [cluster-ClusterId{value='66e3a98c3bc64325e1104aec', description='null'}-localhost:27017-41] [5514] [o.m.d.cluster.info:76] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:143) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) [mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144) [mongodb-driver-core-4.1.1.jar:?]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_271]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_271]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:476) ~[?:1.8.0_271]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:218) ~[?:1.8.0_271]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:200) ~[?:1.8.0_271]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:394) ~[?:1.8.0_271]
+	at java.net.Socket.connect(Socket.java:606) ~[?:1.8.0_271]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:78) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.1.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.1.1.jar:?]
+	... 4 more
+[2024-09-13 10:55:09,282] [INFO] [main-1] [5886] [o.a.c.h.Http11NioProtocol.log:173] Starting ProtocolHandler ["http-nio-8092"]
+[2024-09-13 10:55:09,325] [INFO] [main-1] [5929] [o.s.b.w.e.t.TomcatWebServer.start:220] Tomcat started on port(s): 8092 (http) with context path '/p/admin'
+[2024-09-13 10:55:09,335] [INFO] [main-1] [5939] [s.d.s.w.p.DocumentationPluginsBootstrapper.start:93] Documentation plugins bootstrapped
+[2024-09-13 10:55:09,340] [INFO] [main-1] [5944] [s.d.s.w.p.DocumentationPluginsBootstrapper.bootstrapDocumentationPlugins:79] Found 1 custom documentation plugin(s)
+[2024-09-13 10:55:09,404] [INFO] [main-1] [6008] [s.d.s.w.s.ApiListingReferenceScanner.scan:44] Scanning for api listing references
+[2024-09-13 10:55:09,676] [INFO] [main-1] [6280] [s.d.s.w.r.o.CachingOperationNameGenerator.startingWith:41] Generating unique operation named: getReserveListUsingGET_1
+[2024-09-13 10:55:09,680] [INFO] [main-1] [6284] [s.d.s.w.r.o.CachingOperationNameGenerator.startingWith:41] Generating unique operation named: listSessionUsingGET_1
+[2024-09-13 10:55:09,763] [INFO] [main-1] [6367] [c.r.a.n.WebSocketServer.start:23] netty server - 启动成功
+[2024-09-13 10:55:09,770] [INFO] [main-1] [6374] [c.r.WebAdminApplication.logStarted:61] Started WebAdminApplication in 4.856 seconds (JVM running for 6.421)
+[2024-09-13 10:55:35,557] [INFO] [http-nio-8092-exec-1-45] [32161] [o.a.c.c.C.[.[.[/p/admin].log:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2024-09-13 10:55:35,557] [INFO] [http-nio-8092-exec-1-45] [32161] [o.s.w.s.DispatcherServlet.initServletBean:525] Initializing Servlet 'dispatcherServlet'
+[2024-09-13 10:55:35,559] [INFO] [http-nio-8092-exec-1-45] [32163] [o.s.w.s.DispatcherServlet.initServletBean:547] Completed initialization in 2 ms
+[2024-09-13 10:55:35,581] [INFO] [http-nio-8092-exec-1-45] [32185] [c.r.a.i.AuthInterceptor.preHandle:45] 请求 URL：http://localhost:8092/p/admin/myReserve
+[2024-09-13 10:55:36,130] [INFO] [http-nio-8092-exec-1-45] [32734] [c.a.d.p.DruidDataSource.init:983] {dataSource-1} inited
+[2024-09-13 10:56:45,277] [INFO] [SpringContextShutdownHook-28] [101881] [o.s.s.c.ThreadPoolTaskExecutor.shutdown:218] Shutting down ExecutorService 'applicationTaskExecutor'
+[2024-09-13 10:56:45,279] [INFO] [SpringContextShutdownHook-28] [101883] [c.a.d.p.DruidDataSource.close:2024] {dataSource-1} closing ...
+[2024-09-13 10:56:45,283] [INFO] [SpringContextShutdownHook-28] [101887] [c.a.d.p.DruidDataSource.close:2096] {dataSource-1} closed

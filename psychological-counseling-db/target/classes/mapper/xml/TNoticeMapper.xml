@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rys.db.mapper.TNoticeMapper">
+
+    <select id="selectPageVo" parameterType="com.rys.request.admin.NoticeQueryRequest" resultType="com.rys.response.admin.NoticeListResponse">
+        select code as code,
+               title as title,
+               content as content,
+               target_role as targetRole,
+               read_count as readCount,
+               show_type as showType,
+               expire_time as expireTime,
+               gmt_release as gmtRelease,
+               create_time as createTime
+from t_notice
+    <where>
+        <if test="request.title !=null and request.title!=''">
+            and title like concat(#{request.title},'%')
+        </if>
+
+        <if test="request.targetRole !=null and request.targetRole!=''">
+            and target_role like concat(#{request.targetRole},'%')
+        </if>
+
+        <choose>
+            <when test="request.valid!= null and valid!=''">
+                <if test="request.valid==0">
+                    and expire_time <![CDATA[<]]> now()
+                </if>
+            </when>
+            <otherwise>
+                and expire_time >= now() and gmt_release <![CDATA[<=]]> now()
+            </otherwise>
+        </choose>
+
+    </where>
+    </select>
+
+</mapper>

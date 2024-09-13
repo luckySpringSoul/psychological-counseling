@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="web-user" />
+        <module name="util-common" />
+        <module name="psychological-counseling-service" />
+        <module name="psychological-counseling-db" />
+        <module name="web-admin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="web-im" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="psychological-counseling-db" options="-parameters" />
+      <module name="psychological-counseling-java-parent" options="-parameters" />
+      <module name="psychological-counseling-service" options="-parameters" />
+      <module name="util-common" options="-parameters" />
+      <module name="web-admin" options="-parameters" />
+      <module name="web-im" options="-parameters" />
+      <module name="web-user" options="-parameters" />
+    </option>
+  </component>
+</project>

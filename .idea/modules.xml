@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/util-common/util-common.iml" filepath="$PROJECT_DIR$/util-common/util-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-admin/web-admin.iml" filepath="$PROJECT_DIR$/web-admin/web-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-user/web-user.iml" filepath="$PROJECT_DIR$/web-user/web-user.iml" />
+    </modules>
+  </component>
+</project>

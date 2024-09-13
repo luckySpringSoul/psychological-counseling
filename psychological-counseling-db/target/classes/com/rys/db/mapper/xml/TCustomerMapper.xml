@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rys.db.mapper.TCustomerMapper">
+
+    <select id="selectPageVo" parameterType="com.rys.request.admin.CustomerQueryRequest" resultType="com.rys.response.admin.CustomerListResponse">
+        select a.code as code,
+        a.staff_id as staffId,
+        b.staff_no as staffNo,
+        a.customer_type as customerType,
+        a.name as customerName,
+        a.tel as customerPhone,
+        a.status as status,
+        a.profit_amount as profit,
+        a.is_settlement as settlement,
+        a.settlement_time as settlementTime,
+        a.create_time as createTime,
+        a.check_time as auditTime,
+        b.name as staffName
+        from t_customer a
+        left join t_staff b on a.staff_id=b.staff_no and deleted=1
+        <where>
+            <if test="request.staffNo !=null and request.staffNo !=''">
+                and b.staff_no=#{request.staffNo}
+            </if>
+            <if test="request.staffName !=null and request.staffName !=''">
+                and b.name like concat(#{request.staffName},'%')
+            </if>
+            <if test="request.staffPhone !=null and request.staffPhone !=''">
+                and b.tel like concat(#{request.staffPhone},'%')
+            </if>
+            <if test="request.customerPhone !=null and request.customerPhone !=''">
+                and a.tel like concat(#{request.customerPhone},'%')
+            </if>
+            <if test="request.customerName !=null and request.customerName !=''">
+                and a.name=#{request.customerName}
+            </if>
+            <if test="request.settlement !=null and request.settlement !=''">
+                and a.is_settlement=#{request.settlement}
+            </if>
+            <if test="request.status !=null and request.status !=''">
+                and a.status=#{request.status}
+            </if>
+            <if test="request.createStartTime !=null and request.createStartTime !=''">
+                and a.create_time >= concat(#{request.createStartTime},' 00:00:00')
+            </if>
+            <if test="request.createEndTime !=null and request.createEndTime !=''">
+                and a.create_time $lt;= concat(#{request.createEndTime},' 23:59:59')
+            </if>
+
+            <if test="request.auditStartTime !=null and request.auditStartTime !=''">
+                and a.check_time >= concat(#{request.auditStartTime},' 00:00:00')
+            </if>
+            <if test="request.auditEndTime !=null and request.auditEndTime !=''">
+                and a.check_time $lt;= concat(#{request.auditEndTime},' 23:59:59')
+            </if>
+
+            <if test="request.settlementStartTime !=null and request.settlementStartTime !=''">
+                and a.settlement_time >= concat(#{request.settlementStartTime},' 00:00:00')
+            </if>
+            <if test="request.settlementStartTime !=null and request.settlementStartTime !=''">
+                and a.settlement_time $lt;= concat(#{request.settlementStartTime},' 23:59:59')
+            </if>
+
+        </where>
+    </select>
+
+</mapper>
